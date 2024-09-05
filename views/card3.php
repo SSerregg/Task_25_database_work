@@ -1,0 +1,1 @@
+<p class="card-text"><?php echo $content;?></p>
