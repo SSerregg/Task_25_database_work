@@ -1,24 +1,23 @@
 <?php
+session_start();
 
-echo '<pre>'; 
-print_r($_POST); 
-echo '</pre>';
+$comment = $_POST['comment'] ?? null;
+$uName = ucfirst(strtolower($_SESSION['uName']));
 
-$usern = $_POST['username'] ?? null;
-$comment = $_POST['username'] ?? null;
 
-$comment = ucfirst(strtolower($comment));
+$comm = ucfirst(strtolower($comment));
 
 $way = dirname(__DIR__,1).DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$_POST['id'].'.txt';
 
 $file = fopen($way, 'a');
 
-echo '<pre>'; 
-print_r($way); 
-echo '</pre>';
 
-fwrite($file, 'Дата:'.date("Y-m-d H:i")."\r\n".'Пользователь:'.$usern.":\r\n".'->'.$comment."\r\n");
+
+fwrite($file, 'Дата:'.date("Y-m-d H:i")."\r\n".'Пользователь:'.$uName.":\r\n".'->'.$comm."\r\n");
 
 fclose($file);
+
+echo $uName;
+
 
 header ('Location:/bootstrap.php');

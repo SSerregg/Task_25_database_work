@@ -9,11 +9,19 @@
   <body>
   <header>
         <h1></h1>
-  <form method='post' action="modules/server.php" enctype="multipart/form-data">          
-<input type="hidden" name="MAX_FILE_SIZE" value="5000000">
-<input type='file' name='file[]' class="btn btn-success" id='file-drop' multiple required><br> 
-<input type='submit' value='Загрузить' class="btn btn-warning" >
-</form>
+        <form action="" method="get" class="btn btn-primary">
+
+        <input name="username" type="text" placeholder="имя">
+
+        <input  type="submit" value="Авторизироваться" >
+    </form>
+    <br>
+    <br>
+    <form action="" method="get" class="btn btn-primary">
+
+
+        <input name="submit" type="submit" value="Деавторизироваться" >
+    </form>
 </header>
 <section>
   <br>
