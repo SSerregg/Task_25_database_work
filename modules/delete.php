@@ -1,7 +1,7 @@
 <?php
 
+$forDelete = dirname(__DIR__,1).DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$_POST['id'];
 
-$forDelete = dirname(__DIR__,1).DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.array_keys($_POST)[0];
 
 function delete ($del){
     global $forDelete;
@@ -13,8 +13,3 @@ delete('.png');
 delete('.txt');
 delete('.jpg');
 header ('Location:/bootstrap.php');
-//echo '<pre>';
-//echo dirname(__DIR__,1).DIRECTORY_SEPARATOR;
-
-//print_r($forDelete);
-//echo '<pre>';
