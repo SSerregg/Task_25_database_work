@@ -5,7 +5,7 @@
 class WorkWithBD{
 	public static function connect(){
 	try{
-		return new PDO("mysql:host=locallhost;dbname=mysqldata", 'root', 'admin');
+		return new PDO("mysql:host=localhost;dbname=mysqldata", 'root', 'admin');
 		
 	}
 	catch(PDOException){
