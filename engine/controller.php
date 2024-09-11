@@ -14,12 +14,13 @@ foreach ($scanDir as $key => $value){
         $delete = preg_replace('/[.png|.jpg]{4}\b/', '', $value);
 
         include VIEW.'card1.php';
-        
-        
-     
+            if ($db){
             $sql = "SELECT `nickName`, `date`, `comment` FROM `comments` WHERE  `pictureName` IN ('$value')";
+           
             $stmt = $db->query($sql);
             $result = $stmt->FetchAll(PDO::FETCH_ASSOC);
+    
+        
           
            foreach ($result as $key => $alue){
             include VIEW.'card2.php';
@@ -27,7 +28,7 @@ foreach ($scanDir as $key => $value){
          
            if($start){
             include VIEW.'comment.php';
-        }    
+        }   } 
       
         if($start){
             //include VIEW.'editComment.php';
